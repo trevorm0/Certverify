@@ -1,0 +1,55 @@
+-- ============================================================
+-- CertsVerify — Graduate accounts reference table
+-- ============================================================
+-- #   Full Name                 Admission Number          Email                                    Password
+-- ----------------------------------------------------------------------------------------------------------------------------------
+-- 1   Oliver Mwangi             UON/LAW/2020/229          oliver.mwangi@gmail.com                  OliverMwangi124!
+-- 2   Isaac Simiyu              KU/BUS/2023/605           isaac.simiyu@gmail.com                   IsaacSimiyu123!
+-- 3   Beatrice Wanjiru          UON/LAW/2019/518          beatrice.wanjiru@gmail.com               BeatriceWanjiru123!
+-- 4   Moses Omondi              USIU/HUM/2023/226         moses.omondi@gmail.com                   MosesOmondi123!
+-- 5   Collins Wangari           MU/HUM/2019/349           collins.wangari@gmail.com                CollinsWangari123!
+-- 6   Robert Otieno             JKUAT/BUS/2018/390        robert.otieno@gmail.com                  RobertOtieno123!
+-- 7   George Wambui             EGU/CS/2020/748           george.wambui@gmail.com                  GeorgeWambui123!
+-- 8   Diana Musyoka             KU/MED/2018/850           diana.musyoka@gmail.com                  DianaMusyoka123!
+-- 9   Oliver Kiptoo             EGU/BUS/2019/047          oliver.kiptoo@gmail.com                  OliverKiptoo123!
+-- 10  Quinter Mutua             MU/BUS/2019/390           quinter.mutua@gmail.com                  QuinterMutua123!
+-- 11  Robert Chebet             EGU/SCI/2020/215          robert.chebet@gmail.com                  RobertChebet123!
+-- 12  Quinter Achieng           KU/ENG/2023/547           quinter.achieng@gmail.com                QuinterAchieng123!
+-- 13  Upendo Mutua              STR/MED/2021/948          upendo.mutua@gmail.com                   UpendoMutua123!
+-- 14  Oliver Wairimu            USIU/SCI/2023/864         oliver.wairimu@gmail.com                 OliverWairimu123!
+-- 15  Xenia Adhiambo            UON/SCI/2018/411          xenia.adhiambo@gmail.com                 XeniaAdhiambo123!
+-- 16  Robert Kipchoge           JKUAT/SCI/2023/218        robert.kipchoge@gmail.com                RobertKipchoge123!
+-- 17  Patricia Gitau            MSN/ENG/2021/272          patricia.gitau@gmail.com                 PatriciaGitau123!
+-- 18  Isaac Mutua               USIU/HUM/2020/920         isaac.mutua@gmail.com                    IsaacMutua123!
+-- 19  Lilian Kimani             EGU/EDU/2019/094          lilian.kimani@gmail.com                  LilianKimani123!
+-- 20  William Wanjiru           KU/ENG/2023/812           william.wanjiru@gmail.com                WilliamWanjiru123!
+-- 21  Richard Owino             CUEA/HUM/2021/611         richard.owino@gmail.com                  RichardOwino123!
+-- 22  Diana Akinyi              MU/BUS/2018/699           diana.akinyi@gmail.com                   DianaAkinyi123!
+-- 23  Irene Adhiambo            MU/BUS/2020/301           irene.adhiambo@gmail.com                 IreneAdhiambo123!
+-- 24  Beatrice Kamau            DAY/MED/2023/996          beatrice.kamau@gmail.com                 BeatriceKamau123!
+-- 25  Gilbert Adhiambo          STR/MED/2018/862          gilbert.adhiambo@gmail.com               GilbertAdhiambo123!
+-- 26  Oliver Akinyi             CUEA/SCI/2019/781         oliver.akinyi@gmail.com                  OliverAkinyi123!
+-- 27  Kevin Musyoka             USIU/SCI/2022/501         kevin.musyoka@gmail.com                  KevinMusyoka123!
+-- 28  Brian Mwangi              EGU/CS/2019/247           brian.mwangi@gmail.com                   BrianMwangi123!
+-- 29  Kemunto Kipchoge          KU/BUS/2021/779           kemunto.kipchoge@gmail.com               KemuntoKipchoge123!
+-- 30  Isaac Otieno              DAY/MED/2019/541          isaac.otieno@gmail.com                   IsaacOtieno123!
+-- 31  Moses Owino               JKUAT/LAW/2023/731        moses.owino@gmail.com                    MosesOwino123!
+-- 32  Thomas Kimani             EGU/EDU/2022/124          thomas.kimani@gmail.com                  ThomasKimani123!
+-- 33  Pauline Mutua             KU/LAW/2018/603           pauline.mutua@gmail.com                  PaulineMutua123!
+-- 34  Oscar Omondi              KU/CS/2023/235            oscar.omondi@gmail.com                   OscarOmondi123!
+-- 35  Eunice Auma               UON/LAW/2018/286          eunice.auma@gmail.com                    EuniceAuma123!
+-- 36  Quinter Gitau             JKUAT/EDU/2019/249        quinter.gitau@gmail.com                  QuinterGitau123!
+-- 37  Edwin Njenga              MSN/BUS/2018/675          edwin.njenga@gmail.com                   EdwinNjenga123!
+-- 38  Beatrice Wambui           MSN/CS/2021/690           beatrice.wambui@gmail.com                BeatriceWambui123!
+-- 39  Patricia Nyambura         KU/SCI/2021/820           patricia.nyambura@gmail.com              PatriciaNyambura123!
+-- 40  George Mutua              JKUAT/EDU/2022/144        george.mutua@gmail.com                   GeorgeMutua123!
+-- 41  Pauline Njoroge           KU/BUS/2022/052           pauline.njoroge@gmail.com                PaulineNjoroge123!
+-- 42  Patricia Musyoka          UON/ENG/2019/417          patricia.musyoka@gmail.com               PatriciaMusyoka123!
+-- 43  Florence Gitau            JKUAT/ENG/2018/389        florence.gitau@gmail.com                 FlorenceGitau123!
+-- 44  Amina Kimani              MU/HUM/2020/714           amina.kimani@gmail.com                   AminaKimani123!
+-- 45  Upendo Njenga             USIU/EDU/2023/159         upendo.njenga@gmail.com                  UpendoNjenga123!
+-- 46  Michael Kariuki           JKUAT/CS/2022/766         michael.kariuki@gmail.com                MichaelKariuki123!
+-- 47  Ursula Wanjiru            UON/ENG/2021/059          ursula.wanjiru@gmail.com                 UrsulaWanjiru123!
+-- 48  Gilbert Kipchoge          STR/BUS/2022/692          gilbert.kipchoge@gmail.com               GilbertKipchoge123!
+-- 49  Pauline Kimani            KU/CS/2019/635            pauline.kimani@gmail.com                 PaulineKimani123!
+-- 50  Faith Owino               CUEA/SCI/2022/958         faith.owino@gmail.com                    FaithOwino123!

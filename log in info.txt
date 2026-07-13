@@ -1,0 +1,63 @@
+log in info
+
+Sysadmin - Benten01! --Ben Ten
+
+Employer 
+James Cool -Jamescool123!
+
+
+graduate
+Anthony Kamau -Anthonykamau123!
+Diana Musyoka -Dianamusyoka123!
+Amina Kimani - Aminakimani123!
+
+Registars
+Eg--Jeremiah Kamau ---Jeremiah123!
+ku--Grace Wanjiku --Grace123!
+day--Ashley Kibe -- Ashley123!
+Mu--Chris Mbugua --Chrismbugua123!
+cuea--Festas Onyango--Festasonyango123!
+usiu--Felix Odwory--Felixodwory123!
+maseno--Jesinta Jelimo--Jesintajelimo123!
+uon--Nicole Wambui--Nicolewambui123!
+jkuat--Jake Njoki--Jakenjoki123!
+str--Alex Maiana--Alexmaina123!
+
+
+QN
+1.if asked to create a new student from scratch should we are already have an existing cert for that student. 
+2.Should we have additional certs incase we are asked to input a new university
+5.***what to do incase of a registrar changes
+6.***changed the cert id for one pdf and it still said its legit
+8.***What prevents a graduate from acting like an employer?...or any person to be a registrar
+9.What relationships exist between tables?....What happens if a registrar is deleted — what happens to their certificates?
+10.What happens if the certificate format is different?
+11.What are the weaknesses of your system?
+12.What happens if:...The PDF is blurry?...The font is unusual?....The name is slightly misspelled?
+13Dark mode maybe
+***14admin can edit registar info
+***15.Add an active session when a user is still loged in drop down for dashboard
+16.add qr code to certs for uniqueness it shoukd show timestaps for when it was uploaded and registrar name and name of student
+***17.change Admin dashboard to be able to click the 4 tabs
+***18.log in 
+
+19.***admin should be able to manage users meaning deleting users,
+20.***Add certs issue on registrar when I cancel the option for adding one im redirected to a different cert and it opens which should be the case
+21.scan issue
+22.***Session start on registrar side
+23.register university
+
+24.***Registrar even after being rejected by admin they can still log in to the system
+35.***Registrar navbar doesn't match
+
+
+
+
+
+
+
+
+
+
+
+

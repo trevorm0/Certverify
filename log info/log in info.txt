@@ -1,0 +1,26 @@
+log in info
+
+Sysadmin - Benten01! --Ben Ten
+employer -James Cool --Jamescool123!
+graduate -Anthony Kamau -Anthonykamau123!
+
+Registars
+Eg--Jeremiah Kamau ---Jeremiah123!
+ku--Grace Wanjiku --Grace123!
+day--Ashley Kibe -- Ashley123!
+Mu--Chris Mbugua --Chrismbugua123!
+cuea--Festas Onyango--Festasonyango123!
+usiu--Felix Odwory--Felixodwory123!
+maseno--Jesinta Jelimo--Jesintajelimo123!
+uon--Nicole Wambui--Nicolewambui123!
+jkuat--Jake Njoki--Jakenjoki123!
+str--Alex Maiana--Alexmaina123!
+
+
+QN
+1.if asked to create a new student from scratch should we are already have an existing cert for that student. 
+2.Should we have additional certs incase we are asked to input a new university
+3.change the number of certs on the graduate,employer
+4.signature on certs
+5.what to do incase of a registrar changes
+6.changed the cert id for one pdf and it still said its legit

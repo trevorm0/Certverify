@@ -1,0 +1,821 @@
+/* ============================================================
+   CertsVerify — White & Blue Theme
+   style.css
+
+   TABLE OF CONTENTS
+   1.  Google Font import
+   2.  CSS Variables (colours, spacing, shadows)
+   3.  Reset & base styles
+   4.  Scrollbar
+   5.  Navbar
+   6.  Homepage hero
+   7.  Hero — role cards
+   8.  Hero — stats bar
+   9.  Auth pages (login & register)
+   10. Form inputs
+   11. Buttons
+   12. Dashboard — cards
+   13. Dashboard — tables
+   14. Dashboard — modals
+   15. Alerts & badges
+   16. Miscellaneous utilities
+   17. Scan animation
+   18. Responsive (mobile)
+   ============================================================ */
+
+
+/* ============================================================
+   1. GOOGLE FONT
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+
+/* ============================================================
+   2. CSS VARIABLES
+   ============================================================ */
+
+:root {
+
+  /* Brand colours */
+  --blue:        #2563eb;   /* primary blue */
+  --blue-dark:   #1d4ed8;   /* darker blue — hover states */
+  --blue-light:  #eff6ff;   /* very light blue — backgrounds */
+  --blue-mid:    #bfdbfe;   /* mid blue — borders, accents */
+  --navy:        #1e3a5f;   /* deep navy — headings, table headers */
+
+  /* Text colours */
+  --text:        #111827;   /* primary text */
+  --muted:       #6b7280;   /* secondary text */
+  --hint:        #9ca3af;   /* placeholder text */
+
+  /* Backgrounds & surfaces */
+  --bg:          #f8faff;   /* page background */
+  --white:       #ffffff;   /* cards, inputs */
+
+  /* Borders */
+  --border:      #e5e7eb;
+  --border-blue: #bfdbfe;
+
+  /* Shadow */
+  --shadow: 0 2px 16px rgba(37, 99, 235, 0.08);
+
+  /* Status colours */
+  --success: #059669;
+  --danger:  #dc2626;
+  --warning: #d97706;
+
+  /* Border radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+}
+
+
+/* ============================================================
+   3. RESET & BASE STYLES
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
+  font-size: 15px;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  color: var(--text);
+}
+
+a {
+  color: var(--blue);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--blue-dark);
+}
+
+
+/* ============================================================
+   4. SCROLLBAR
+   ============================================================ */
+
+::-webkit-scrollbar       { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--blue-mid); border-radius: 3px; }
+
+
+/* ============================================================
+   5. NAVBAR
+   ============================================================ */
+
+/* Shared styles for our .cv-navbar and Bootstrap's .navbar */
+.cv-navbar,
+.navbar {
+  background: var(--white) !important;
+  border-top: 3px solid var(--blue) !important;
+  border-bottom: 1px solid var(--border) !important;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06) !important;
+  padding: 12px 28px !important;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.cv-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Brand / logo */
+.brand,
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-size: 18px !important;
+  font-weight: 800 !important;
+  color: var(--text) !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+}
+
+/* Blue square icon next to the brand name */
+.brand-icon {
+  width: 34px;
+  height: 34px;
+  background: var(--blue);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 17px;
+}
+
+/* "Verify" in CertsVerify is blue */
+.brand span,
+.navbar-brand span {
+  color: var(--blue);
+}
+
+/* Small pill e.g. "Secure verification" */
+.nav-badge {
+  background: var(--blue-light);
+  border: 1px solid var(--border-blue);
+  border-radius: 20px;
+  padding: 5px 14px;
+  font-size: 12px;
+  color: var(--blue);
+  font-weight: 600;
+}
+
+/* Bootstrap nav links */
+.nav-link       { color: var(--muted) !important; font-size: 14px !important; }
+.nav-link:hover { color: var(--blue) !important; }
+
+/* Dropdown */
+.dropdown-menu        { border: 1px solid var(--border) !important; border-radius: var(--radius-md) !important; box-shadow: var(--shadow) !important; }
+.dropdown-item        { font-size: 13px !important; color: var(--text) !important; }
+.dropdown-item:hover  { background: var(--blue-light) !important; color: var(--blue) !important; }
+
+/* User info area */
+.nav-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* Avatar circle showing user's initial */
+.nav-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--blue-light);
+  border: 2px solid var(--border-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--blue);
+}
+
+
+/* ============================================================
+   6. HOMEPAGE HERO
+   ============================================================ */
+
+.cv-hero {
+  position: relative;
+  min-height: calc(100vh - 63px);
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Background video — fills the entire hero section */
+.cv-hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  z-index: 0;
+  display: block;
+}
+
+/* Semi-transparent white wash — keeps text readable */
+.cv-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.50);
+  z-index: 1;
+}
+
+/* Subtle blue fade from the top edge */
+.cv-hero-fade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(37, 99, 235, 0.07) 0%, transparent 60%);
+  z-index: 1;
+}
+
+/* Content sits above the background layers — centered */
+.cv-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 60px 24px;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  animation: fadeUp 0.7s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* "● Academic certificate verification system" pill */
+.cv-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--blue-light);
+  border: 1px solid var(--border-blue);
+  border-radius: 30px;
+  padding: 6px 18px;
+  font-size: 12px;
+  color: var(--blue);
+  font-weight: 600;
+  margin-bottom: 20px;
+  letter-spacing: 0.3px;
+}
+
+/* Pulsing dot inside the eyebrow pill */
+.cv-hero-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--blue);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1);   opacity: 1;   }
+  50%       { transform: scale(1.3); opacity: 0.5; }
+}
+
+/* Main heading */
+.cv-hero h1 {
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1.1;
+  margin-bottom: 14px;
+  letter-spacing: -1px;
+}
+
+/* "instantly & securely" is blue */
+.cv-hero h1 span { color: var(--blue); }
+
+/* Subtitle below heading */
+.cv-hero-sub {
+  font-size: 15px;
+  color: var(--muted);
+  max-width: 460px;
+  margin: 0 auto 44px;
+  line-height: 1.7;
+}
+
+
+/* ============================================================
+   7. HERO — ROLE CARDS
+   ============================================================ */
+
+/* Grid — auto-fits 4 cards on desktop */
+.cv-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 18px;
+  max-width: 960px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+/* Each card is a flex column so the button is always at the bottom */
+.cv-role-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px 18px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s;
+  box-shadow: var(--shadow);
+}
+
+.cv-role-card:hover {
+  border-color: var(--blue);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(37, 99, 235, 0.15);
+}
+
+.cv-role-icon {
+  font-size: 40px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.cv-role-card h5 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+/* flex:1 pushes the button to the bottom of each card */
+.cv-role-card p {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 18px;
+  flex: 1;
+}
+
+/* "Proceed →" button */
+.cv-role-btn {
+  display: block;
+  background: var(--blue);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  padding: 9px 0;
+  font-size: 12px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.cv-role-card:hover .cv-role-btn { background: var(--blue-dark); }
+
+
+/* ============================================================
+   8. HERO — STATS BAR
+   ============================================================ */
+
+.cv-stats {
+  background: var(--navy);
+  padding: 18px 32px;
+  display: flex;
+  justify-content: center;
+  gap: 52px;
+}
+
+.cv-stat-num {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--blue-mid);
+  text-align: center;
+}
+
+.cv-stat-lbl {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  margin-top: 2px;
+}
+
+
+/* ============================================================
+   9. AUTH PAGES (LOGIN & REGISTER)
+   ============================================================ */
+
+/* Full-height centred page wrapper */
+.cv-auth-wrap {
+  min-height: 100vh;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+/* White form card */
+.cv-auth-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 40px 36px;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: var(--shadow);
+  animation: fadeUp 0.5s ease both;
+}
+
+/* Register pages have more fields so need a wider card */
+.cv-auth-card.wide { max-width: 560px; }
+
+/* Emoji icon box at top of form */
+.auth-icon {
+  width: 54px;
+  height: 54px;
+  background: var(--blue-light);
+  border: 1px solid var(--border-blue);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  margin: 0 auto 18px;
+}
+
+.cv-auth-card h2 {
+  font-size: 22px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.auth-sub {
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+
+
+/* ============================================================
+   10. FORM INPUTS
+   ============================================================ */
+
+.cv-form-group { margin-bottom: 14px; }
+
+.cv-form-group label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+/* Custom input used on login/register */
+.cv-input {
+  width: 100%;
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 11px 14px;
+  font-size: 14px;
+  color: var(--text);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.cv-input:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.cv-input::placeholder { color: var(--hint); }
+
+/* Bootstrap input overrides */
+.form-control,
+.form-select {
+  border: 1.5px solid var(--border) !important;
+  border-radius: var(--radius-md) !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 14px !important;
+  color: var(--text) !important;
+  background: var(--white) !important;
+  padding: 11px 14px !important;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--blue) !important;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1) !important;
+}
+
+.form-control::placeholder { color: var(--hint) !important; }
+
+.form-floating label { color: var(--hint) !important; font-size: 13px !important; }
+
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label {
+  color: var(--blue) !important;
+  font-size: 11px !important;
+}
+
+.form-select option { background: var(--white); color: var(--text); }
+
+
+/* ============================================================
+   11. BUTTONS
+   ============================================================ */
+
+/* Primary — main action e.g. "Log in", "Search" */
+.btn-cv-primary,
+.btn-primary {
+  background: var(--blue) !important;
+  border: none !important;
+  border-radius: var(--radius-md) !important;
+  padding: 12px 20px !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  color: #fff !important;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
+.btn-cv-primary:hover,
+.btn-primary:hover {
+  background: var(--blue-dark) !important;
+  color: #fff !important;
+  transform: translateY(-1px);
+}
+
+/* Ghost — secondary action e.g. "Back to home" */
+.btn-cv-ghost,
+.btn-dark {
+  background: transparent !important;
+  border: 1.5px solid var(--border) !important;
+  border-radius: var(--radius-md) !important;
+  padding: 11px 20px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: var(--muted) !important;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: block;
+  text-align: center;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+}
+
+.btn-cv-ghost:hover,
+.btn-dark:hover {
+  border-color: var(--blue) !important;
+  color: var(--blue) !important;
+  background: var(--blue-light) !important;
+}
+
+/* Status buttons */
+.btn-success { background: var(--success) !important; border-color: var(--success) !important; border-radius: var(--radius-sm) !important; }
+.btn-danger  { background: var(--danger)  !important; border-color: var(--danger)  !important; border-radius: var(--radius-sm) !important; }
+.btn-warning { background: var(--warning) !important; border-color: var(--warning) !important; border-radius: var(--radius-sm) !important; color: #fff !important; }
+
+
+/* ============================================================
+   12. DASHBOARD — CARDS
+   ============================================================ */
+
+.card {
+  background: var(--white) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--shadow) !important;
+}
+
+.card-header {
+  background: var(--blue-light) !important;
+  border-bottom: 1px solid var(--border-blue) !important;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0 !important;
+  color: var(--blue) !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  padding: 14px 20px !important;
+}
+
+.card-body  { color: var(--text)  !important; padding: 20px !important; }
+.card-title { color: var(--text)  !important; font-weight: 700 !important; }
+.card-text  { color: var(--muted) !important; font-size: 13px !important; }
+
+
+/* ============================================================
+   13. DASHBOARD — TABLES
+   ============================================================ */
+
+.table { color: var(--text) !important; font-size: 13px !important; }
+
+/* Dark navy header */
+.table thead th {
+  background: var(--navy) !important;
+  color: #fff !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.6px !important;
+  border: none !important;
+  padding: 12px 16px !important;
+}
+
+.table tbody td {
+  border-color: var(--border) !important;
+  color: var(--muted) !important;
+  padding: 12px 16px !important;
+  vertical-align: middle !important;
+}
+
+/* Highlight row on hover */
+.table tbody tr:hover td {
+  background: var(--blue-light) !important;
+  color: var(--text) !important;
+}
+
+
+/* ============================================================
+   14. DASHBOARD — MODALS
+   ============================================================ */
+
+.modal-content {
+  background: var(--white) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12) !important;
+}
+
+.modal-header {
+  background: var(--blue-light) !important;
+  border-bottom: 1px solid var(--border-blue) !important;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0 !important;
+  padding: 16px 24px !important;
+}
+
+.modal-title  { color: var(--blue) !important; font-weight: 700 !important; font-size: 15px !important; }
+.modal-footer { border-top: 1px solid var(--border) !important; padding: 14px 24px !important; }
+.modal-body   { padding: 24px !important; }
+
+/* Labels inside modal forms */
+.modal-body label {
+  color: var(--muted) !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.4px !important;
+  margin-bottom: 5px !important;
+  display: block;
+}
+
+/* Floating labels inside modals — do not uppercase these */
+.modal .form-floating label {
+  text-transform: none !important;
+  color: var(--hint) !important;
+  font-weight: 400 !important;
+}
+
+
+/* ============================================================
+   15. ALERTS & BADGES
+   ============================================================ */
+
+.alert { border-radius: var(--radius-md) !important; font-size: 13px !important; font-weight: 500 !important; }
+
+.alert-success { background: #f0fdf4 !important; border-color: #bbf7d0 !important; color: #166534 !important; }
+.alert-danger  { background: #fef2f2 !important; border-color: #fecaca !important; color: #991b1b !important; }
+.alert-warning { background: #fffbeb !important; border-color: #fde68a !important; color: #92400e !important; }
+
+.badge { border-radius: var(--radius-sm) !important; font-weight: 600 !important; font-size: 11px !important; padding: 4px 8px !important; }
+
+.badge.bg-success { background: #dcfce7 !important; color: #166534 !important; }
+.badge.bg-danger  { background: #fee2e2 !important; color: #991b1b !important; }
+.badge.bg-primary { background: var(--blue-light) !important; color: var(--blue) !important; }
+
+
+/* ============================================================
+   16. MISCELLANEOUS UTILITIES
+   ============================================================ */
+
+.text-muted   { color: var(--muted) !important; }
+.text-primary { color: var(--blue) !important; }
+
+hr { border-color: var(--border) !important; }
+
+.page-link                  { background: var(--white) !important; border-color: var(--border) !important; color: var(--blue) !important; border-radius: var(--radius-sm) !important; }
+.page-item.active .page-link { background: var(--blue) !important; border-color: var(--blue) !important; color: #fff !important; }
+
+
+/* ============================================================
+   17. SCAN ANIMATION (verify_result.php)
+   ============================================================ */
+
+/* Wrapper box holding the certificate skeleton preview */
+.cv-scan-box {
+  background: var(--white);
+  border: 1px solid var(--border-blue);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+/* The blue line that sweeps down the certificate preview */
+.cv-scan-line {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--blue), transparent);
+  animation: scanLine 1.8s ease-in-out 3;
+  top: 0;
+}
+
+@keyframes scanLine {
+  0%   { top: 0%;   opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+
+/* ============================================================
+   18. RESPONSIVE — MOBILE (max-width: 576px)
+   ============================================================ */
+
+@media (max-width: 576px) {
+
+  /* 2x2 grid instead of 4 columns */
+  .cv-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 500px;
+  }
+
+  /* Wrap stats and reduce spacing */
+  .cv-stats {
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 14px 16px;
+  }
+
+  /* Less padding on small screens */
+  .cv-auth-card {
+    padding: 28px 20px;
+  }
+
+  .cv-navbar,
+  .navbar {
+    padding: 12px 16px !important;
+  }
+}
