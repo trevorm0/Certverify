@@ -198,6 +198,7 @@ if (isset($_POST['save']) && !empty($_POST['first_name']) && !empty($_POST['last
                     <li class="nav-item">
                         <button class="nav-link active" id="tab-search" onclick="showTab('search')" style="font-size:13px;font-weight:600;">
                             <i class="bi bi-person-check me-2"></i>Confirm Graduate
+                           
                         </button>
                     </li>
                     <li class="nav-item">
@@ -208,6 +209,8 @@ if (isset($_POST['save']) && !empty($_POST['first_name']) && !empty($_POST['last
                     <li class="nav-item">
                         <button class="nav-link <?php echo isset($_GET['tab']) && $_GET['tab']==='batch' ? 'active' : ''; ?>" id="tab-batch" onclick="showTab('batch')" style="font-size:13px;font-weight:600;">
                             <i class="bi bi-files me-2"></i>Batch Verify
+                            <span class="badge bg-primary ms-1" style="font-size:10px;"></span>
+
                         </button>
                     </li>
                     <li class="nav-item">

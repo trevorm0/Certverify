@@ -351,6 +351,7 @@ function renderPagination($cp,$tp,$pp){
                 ['key'=>'log',    'label'=>'Activity Log',      'icon'=>'journal-text',      'count'=>''],
                 ['key'=>'messages','label'=>'Messages',         'icon'=>'envelope',          'count'=>$total_messages_unread],
                 ['key'=>'backup', 'label'=>'Backup',            'icon'=>'database-down',     'count'=>''],
+
             ];
             foreach($tabs as $t):
                 $badgeStyle = (($t['key']==='pending' || $t['key']==='messages') && $t['count']>0)
@@ -1098,6 +1099,8 @@ function renderPagination($cp,$tp,$pp){
             </div>
         </div><!-- end backup tab -->
 
+=======
+>>>>>>> 83b8309e27daf35fea26f2e49a099ecc1b4a435b
         <?php endif;?>
     </div>
 

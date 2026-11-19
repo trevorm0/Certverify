@@ -1,22 +1,4 @@
 <?php
-/*
- * ============================================================
- * send_otp_email.php — Sends the 2FA OTP code via real email
- * ============================================================
- * Uses PHPMailer + Gmail SMTP.
- *
- * SETUP REQUIRED (do this once):
- * 1. Use a real Gmail account (yours, or a new one made just
- *    for this project) — this is the account that SENDS emails.
- * 2. Turn on 2-Step Verification on that Gmail account:
- *    https://myaccount.google.com/security
- * 3. Generate a Gmail "App Password":
- *    https://myaccount.google.com/apppasswords
- *    -> Choose "Mail" and "Other (custom name)" -> name it CertsVerify
- *    -> Google gives you a 16-character password like: abcd efgh ijkl mnop
- * 4. Fill in the two values below.
- * ============================================================
- */
 
 require_once __DIR__ . '/../vendor/phpmailer/src/Exception.php';
 require_once __DIR__ . '/../vendor/phpmailer/src/PHPMailer.php';

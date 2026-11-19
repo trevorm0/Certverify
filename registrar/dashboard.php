@@ -353,6 +353,7 @@ if (isset($_GET['tab']) && $_GET['tab'] === 'batch' && !empty($_SESSION['batch_u
                                             <div class="row">
                                                 <div class="col-sm-6">
                                                     <div class="form-floating mb-3">
+
                                                         <!-- University is locked to the registrar's own university -->
                                                         <input type="text" class="form-control"
                                                                value="<?php echo htmlspecialchars($row['universityName']); ?>"
@@ -360,6 +361,14 @@ if (isset($_GET['tab']) && $_GET['tab'] === 'batch' && !empty($_SESSION['batch_u
                                                                style="background:#f0f9ff;color:var(--navy);font-weight:600;cursor:not-allowed;">
                                                         <label>University</label>
                                                         <input type="hidden" name="university_name" value="<?php echo htmlspecialchars($row['universityName']); ?>">
+                                                        <!-- University is locked — a registrar can only ever
+                                                             edit certificates belonging to their own university,
+                                                             and cannot move a certificate to another university.
+                                                             The server enforces this independently from the session,
+                                                             so this field is display-only. -->
+                                                        <input type="text" class="form-control"
+                                                               value="<?php echo htmlspecialchars($row['universityName']); ?>" readonly>
+                                                        <label>University</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6">
@@ -656,6 +665,16 @@ if (isset($_GET['tab']) && $_GET['tab'] === 'batch' && !empty($_SESSION['batch_u
                                                style="background:#f0f9ff;color:var(--navy);font-weight:600;cursor:not-allowed;">
                                         <label>University</label>
                                         <input type="hidden" name="university_name" value="<?php echo htmlspecialchars($my_university); ?>">
+                                        <!-- University is locked to the logged-in registrar's own
+                                             university. It is NOT a free-choice field: registrars
+                                             must not be able to upload certificates for other
+                                             universities. The server also enforces this independently
+                                             by deriving the university from the session, so this field
+                                             is display-only and is never actually read by the backend. -->
+                                        <input type="text" class="form-control"
+                                               value="<?php echo htmlspecialchars($my_university); ?>" readonly>
+                                        <label>University</label>
+
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
